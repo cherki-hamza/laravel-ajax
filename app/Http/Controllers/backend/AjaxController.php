@@ -56,12 +56,16 @@ class AjaxController extends Controller
         if ($post){
             return response()->json([
                 'status' => true,
-                'msg' => 'The Post Saved with success'
+                'title' => $request->title,
+                'category' => $request->category,
+                'body' => $request->body,
+                'picture' => $request->picture,
+                'msg' => 'The Post named '.$request->title.'Saved with success'
             ]);
         }else{
             return response()->json([
                 'status' => false,
-                'msg' => 'Oops Error The Post Not saved ): '
+                'msg' => 'Oops Error The Post named '.$request->title.'is Not saved ): '
             ]);
         }
 
@@ -141,6 +145,10 @@ class AjaxController extends Controller
 
         return response()->json([
             'status' => true,
+            'title' => $request->title,
+            'category' => $request->category,
+            'body' => $request->body,
+            'picture' => $request->picture,
             'msg' => 'The Post Updated with success ):'
         ]);
     }

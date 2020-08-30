@@ -90,18 +90,23 @@
                  if (data){
                      console.log(data);
                      $('#success_msg').show();
+                     $('#title').val('');
+                     $('#category').val('');
+                     $('#picture').val('');
+                     $('#body').val('');
                  }
+
              },
              error : function (reject){
-                let response = $.parseJSON(reject.responseText);
-                 $(".alert").css("display", "block");
-                    $.each(response.errors , function (key,val){
-                        $('#' + key + "_error").text(val[0]);
-                            $('input').addClass('is-invalid');
-                            $('textarea').addClass('is-invalid');
-                        $('#success_msg').hide();
-
-                    });
+                // let response = $.parseJSON(reject.responseText);
+                //  $(".alert").css("display", "block");
+                //     $.each(response.errors , function (key,val){
+                //         $('#' + key + "_error").text(val[0]);
+                //             $('input').addClass('is-invalid');
+                //             $('textarea').addClass('is-invalid');
+                //         $('#success_msg').hide();
+                //
+                //     });
 
              }
 
